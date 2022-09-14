@@ -1,4 +1,3 @@
 function namify(users) {
-    let arrNames = users.map(item => item.name);
-    return arrNames;
+    return users.map(item => item.name);
 }
