@@ -1,6 +1,7 @@
 import createElement from "../../assets/lib/create-element.js";
 
 export default class Carousel {
+
   constructor(slides) {
     this.slides = slides;
     this.count = 0;
@@ -49,7 +50,6 @@ export default class Carousel {
       let button = target.closest('.carousel__button');
       if (button) {
         let id = target.closest('[data-id]').dataset.id;
-        console.log(id);
         this.elem.dispatchEvent(new CustomEvent('product-add', {
           detail: id,
           bubbles: true
@@ -71,7 +71,7 @@ export default class Carousel {
   initCarousel(){
     let slider = this.elem.querySelector('.carousel__inner');
     let width = this.elem.offsetWidth;
-  
+
     let buttonLeft = this.elem.querySelector('.carousel__arrow_left');
     let buttonRight = this.elem.querySelector('.carousel__arrow_right');
   
@@ -97,4 +97,5 @@ export default class Carousel {
     this.count--;
     this.initCarousel();
   }
+
 }
